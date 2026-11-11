@@ -1,80 +1,59 @@
-import { useState } from "react";
-
 function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <nav style={{ background: "#FAF6EC", borderBottom: "1px solid #E5DDC8", padding: "16px 40px", fontFamily: "'Montserrat', Arial, sans-serif" }}>
+    <nav style={{ background: "#FAF6EC", borderBottom: "1px solid #E5DDC8", padding: "14px 16px", fontFamily: "'Montserrat', Arial, sans-serif", position: "sticky", top: 0, zIndex: 50 }}>
       <style>{`
         .nav-bar {
           display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
           justify-content: space-between;
           align-items: center;
-          gap: 16px;
+          gap: 12px;
+          width: 100%;
+          white-space: nowrap;
+        }
+        .nav-logo {
+          font-weight: 800;
+          font-size: clamp(11px, 3.2vw, 14px);
+          letter-spacing: 1px;
+          color: #111;
+          text-decoration: none;
+          flex-shrink: 0;
         }
         .nav-links {
           display: flex;
-          gap: 24px;
-          font-size: 12px;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          gap: clamp(8px, 3vw, 24px);
+          font-size: clamp(9px, 2.8vw, 12px);
           font-weight: 600;
           letter-spacing: 1px;
+          overflow: hidden;
         }
         .nav-links a {
           color: #111;
           text-decoration: none;
+          flex-shrink: 0;
         }
-        .menu-btn {
-          display: none;
-          background: none;
-          border: 1px solid #111;
-          border-radius: 8px;
-          padding: 8px 10px;
-          font-size: 16px;
-          cursor: pointer;
-        }
-        @media (max-width: 768px) {
-          .nav-links {
-            display: none;
-            width: 100%;
-            flex-direction: column;
-            gap: 12px;
-            font-size: 13px;
-            margin-top: 12px;
-          }
-          .nav-links.show {
-            display: flex;
-          }
-          .menu-btn {
-            display: block;
-          }
-          .nav-bar {
-            flex-wrap: wrap;
-          }
-          .nav-status {
-            display: none;
-          }
+        .nav-status {
+          font-size: clamp(8px, 2.5vw, 12px);
+          font-weight: 600;
+          letter-spacing: 1px;
+          flex-shrink: 0;
         }
       `}</style>
 
       <div className="nav-bar">
-        <a href="#" style={{ fontWeight: "800", fontSize: "14px", letterSpacing: "1px", color: "#111", textDecoration: "none" }}>
-          BIGJ DEV
-        </a>
+        <a href="#" className="nav-logo">BIGJ DEV</a>
 
-        <span style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "1px" }}>
-          STATUS: OPERATIONAL
-        </span>
-
-        <button className="menu-btn" onClick={() => setOpen(!open)}>
-          {open ? "X" : "☰"}
-        </button>
-
-        <div className={open ? "nav-links show" : "nav-links"}>
-          <a href="#work" onClick={() => setOpen(false)}>WORK</a>
-          <a href="#skills" onClick={() => setOpen(false)}>SKILLS</a>
-          <a href="#about" onClick={() => setOpen(false)}>ABOUT</a>
-          <a href="#contact" onClick={() => setOpen(false)}>CONTACT</a>
+        <div className="nav-links">
+          <a href="#work">WORK</a>
+          <a href="#skills">SKILLS</a>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
         </div>
+
+        <span className="nav-status">STATUS: OPERATIONAL</span>
       </div>
     </nav>
   );
