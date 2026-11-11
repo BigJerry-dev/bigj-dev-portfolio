@@ -1,35 +1,23 @@
 export const projects = [
   {
     id: 1,
-    title: "Fintech Dashboard — Demo",
-    role: "PRODUCT ENGINEER — DEMO SHOWCASE",
-    desc: "Theme-style demo preview. Click through dashboard UI, charts, transactions, filters. Built to showcase UI/UX + Front-End, like a ThemeForest live preview.",
-    stack: "NEXT.JS | TYPESCRIPT | TAILWIND | 【entity-FIGMA¦canonical_name=FIGMA】",
-    demoLink: "https://...",
-    uiuxLink: "https://...",
-    githubLink: "https://...",
-    videoLink: "https://..."
+    title: "Fintech Dashboard",
+    description: "See the dashboard, charts, transactions, and filters. Built to show how I work with money products.",
+    live: "https://bigjdev-fintech-dashboard.pages.dev",
+    github: "https://github.com/BigJerry-dev/bigjDev-fintech-dashboard",
   },
   {
     id: 2,
-    title: "Wallet UI — Demo",
-    role: "PRODUCT ENGINEER — DEMO SHOWCASE",
-    desc: "Theme-style demo preview. Click through wallet UI, onboarding, balance, send flow. Showcase of mobile UI/UX + React Native front-end.",
-    stack: "REACT NATIVE | TYPESCRIPT | 【entity-FIGMA¦canonical_name=FIGMA】",
-    demoLink: "https://...",
-    uiuxLink: "https://...",
-    githubLink: "https://...",
-    videoLink: "https://..."
+    title: "Wallet UI",
+    description: "See the wallet, onboarding, balance, and send flow. Built to show how I work with mobile UI.",
+    live: "#",
+    github: "#",
   },
   {
     id: 3,
-    title: "Real Estate — Demo",
-    role: "PRODUCT ENGINEER — DEMO SHOWCASE",
-    desc: "Theme-style demo preview. Click through search, filters, favourites, detail page. Showcase of marketplace UI/UX + Front-End.",
-    stack: "REACT NATIVE | REACT | 【entity-FIGMA¦canonical_name=FIGMA】",
-    demoLink: "https://...",
-    uiuxLink: "https://...",
-    githubLink: "https://...",
-    videoLink: "https://..."
+    title: "Real Estate",
+    description: "See the search, filters, favourites, and detail page. Built to show how I work with marketplace UI.",
+    live: "#",
+    github: "#",
   },
 ];

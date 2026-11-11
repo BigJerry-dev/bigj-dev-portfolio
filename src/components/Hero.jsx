@@ -20,7 +20,7 @@ function Hero() {
       </p>
 
       <h1 style={{ fontSize: "72px", fontWeight: "800", lineHeight: "1", margin: "16px 0" }}>
-        BigJ dev.
+        BigJ dev<span style={{ color: "#FFD400" }}>.</span>
       </h1>
 
       <div className="hero-grid">
