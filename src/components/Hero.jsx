@@ -1,6 +1,20 @@
 function Hero() {
   return (
     <section style={{ padding: "40px", background: "#FAF6EC", color: "#111", fontFamily: "'Montserrat', Arial, sans-serif" }}>
+      <style>{`
+        .hero-grid {
+          display: grid;
+          grid-template-columns: 1fr 340px;
+          gap: 32px;
+          align-items: start;
+        }
+        @media (max-width: 768px) {
+          .hero-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+
       <p style={{ fontSize: "11px", letterSpacing: "1px", fontWeight: "600" }}>
         PRODUCT ENGINEER - FRONT-END HEAVY - LAGOS TO THE WORLD
       </p>
@@ -9,8 +23,8 @@ function Hero() {
         BigJ dev.
       </h1>
 
-      <div style={{ display: "flex", gap: "32px", flexWrap: "wrap", justifyContent: "space-between" }}>
-        <div style={{ maxWidth: "520px" }}>
+      <div className="hero-grid">
+        <div>
           <p style={{ fontSize: "20px", lineHeight: "1.6" }}>
             I build full features from start to finish. UI/UX demo, React and Next.js front end, product logic. Not just pixels.
           </p>
@@ -19,7 +33,7 @@ function Hero() {
           </p>
         </div>
 
-        <div style={{ background: "#111", color: "#FAF6EC", padding: "20px", borderRadius: "16px", minWidth: "280px" }}>
+        <div style={{ background: "#111", color: "#FAF6EC", padding: "20px", borderRadius: "16px" }}>
           <p style={{ fontSize: "14px", lineHeight: "1.8" }}>
             <strong>NAME</strong> - Simon Jeremiah Anuoluwapo
           </p>
