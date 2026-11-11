@@ -9,7 +9,7 @@ function Hero() {
       </h1>
       <div style={{ display: "flex", justifyContent: "space-between", gap: "40px", marginTop: "32px" }}>
         <p style={{ fontSize: "22px", lineHeight: "1.4", maxWidth: "520px", fontWeight: "500" }}>
-          Product Engineer focused on building full features end-to-end — UI/UX demo, React / Next.js front-end, product logic — not just pixels.
+          Product Engineer focused on building full features end-to-end - UI/UX demo, React / Next.js front-end, product logic - not just pixels.
         </p>
         <div style={{ fontSize: "11px", lineHeight: "2", fontWeight: "500" }}>
           <p>NAME — Simon Jeremiah Anuoluwapo</p>
