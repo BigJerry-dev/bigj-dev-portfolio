@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav style={{ background: "#FAF6EC", borderBottom: "1px solid #E5DDC8", padding: "16px 40px", fontFamily: "'Montserrat', Arial, sans-serif" }}>
       <style>{`
@@ -19,19 +23,35 @@ function Navbar() {
           color: #111;
           text-decoration: none;
         }
+        .menu-btn {
+          display: none;
+          background: none;
+          border: 1px solid #111;
+          border-radius: 8px;
+          padding: 8px 10px;
+          font-size: 16px;
+          cursor: pointer;
+        }
         @media (max-width: 768px) {
+          .nav-links {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 13px;
+            margin-top: 12px;
+          }
+          .nav-links.show {
+            display: flex;
+          }
+          .menu-btn {
+            display: block;
+          }
           .nav-bar {
             flex-wrap: wrap;
           }
-          .nav-links {
-            width: 100%;
-            justify-content: flex-start;
-            gap: 16px;
-            font-size: 11px;
-            order: 3;
-          }
           .nav-status {
-            font-size: 11px;
+            display: none;
           }
         }
       `}</style>
@@ -41,16 +61,20 @@ function Navbar() {
           BIGJ DEV
         </a>
 
-        <div className="nav-links">
-          <a href="#work">WORK</a>
-          <a href="#skills">SKILLS</a>
-          <a href="#about">ABOUT</a>
-          <a href="#contact">CONTACT</a>
-        </div>
-
-        <span className="nav-status" style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "1px" }}>
+        <span style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "1px" }}>
           STATUS: OPERATIONAL
         </span>
+
+        <button className="menu-btn" onClick={() => setOpen(!open)}>
+          {open ? "X" : "☰"}
+        </button>
+
+        <div className={open ? "nav-links show" : "nav-links"}>
+          <a href="#work" onClick={() => setOpen(false)}>WORK</a>
+          <a href="#skills" onClick={() => setOpen(false)}>SKILLS</a>
+          <a href="#about" onClick={() => setOpen(false)}>ABOUT</a>
+          <a href="#contact" onClick={() => setOpen(false)}>CONTACT</a>
+        </div>
       </div>
     </nav>
   );
