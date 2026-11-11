@@ -8,6 +8,21 @@ function Hero() {
           gap: 32px;
           align-items: start;
         }
+        .pill-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-top: 16px;
+        }
+        .pill {
+          border: 1px solid #111;
+          border-radius: 999px;
+          padding: 6px 12px;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          background: #fff;
+        }
         @media (max-width: 768px) {
           .hero-grid {
             grid-template-columns: 1fr;
@@ -15,15 +30,19 @@ function Hero() {
         }
       `}</style>
 
-      <p style={{ fontSize: "11px", letterSpacing: "1px", fontWeight: "600" }}>
-        PRODUCT ENGINEER - FRONT-END HEAVY - LAGOS TO THE WORLD
-      </p>
+      <img
+        src="/Bigjdevlogo.png"
+        alt="BigJ dev logo"
+        style={{ width: "100%", maxWidth: "620px", height: "auto", display: "block" }}
+      />
 
-      <h1 style={{ fontSize: "72px", fontWeight: "800", lineHeight: "1", margin: "16px 0" }}>
-        BigJ dev<span style={{ color: "#FFD400" }}>.</span>
-      </h1>
+      <div className="pill-row">
+        <span className="pill">PRODUCT ENGINEER</span>
+        <span className="pill">FRONT-END HEAVY</span>
+        <span className="pill">LAGOS TO THE WORLD</span>
+      </div>
 
-      <div className="hero-grid">
+      <div className="hero-grid" style={{ marginTop: "24px" }}>
         <div>
           <p style={{ fontSize: "20px", lineHeight: "1.6" }}>
             I build full features from start to finish. UI/UX demo, React and Next.js front end, product logic. Not just pixels.
