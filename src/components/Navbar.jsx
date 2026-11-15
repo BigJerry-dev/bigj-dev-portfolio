@@ -4,25 +4,15 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav style={{ background: "var(--cream)", borderBottom: "1px solid var(--line)", fontFamily: "'Montserrat', Arial, sans-serif", position: "sticky", top: 0, zIndex: 50 }}>
+    <nav style={{ background: "var(--cream)", fontFamily: "'Montserrat', Arial, sans-serif", position: "sticky", top: 0, zIndex: 50 }}>
       <style>{`
         .nav-top {
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
-          justify-content: space-between;
+          justify-content: flex-end;
           align-items: center;
-          padding: 16px 24px;
-          white-space: nowrap;
-        }
-        .nav-logo {
-          font-weight: 800;
-          font-size: 18px;
-          color: var(--ink);
-          text-decoration: none;
-        }
-        .nav-logo span {
-          color: var(--yellow);
+          padding: 12px 24px;
         }
         .menu-btn {
           background: var(--ink);
@@ -103,7 +93,7 @@ function Navbar() {
         .drawer.show a:nth-of-type(3) { transition-delay: 0.29s; }
         .drawer.show a:nth-of-type(4) { transition-delay: 0.36s; }
         .drawer a:hover {
-          background: var(--cream);
+          background: #F3F3F3;
         }
         .drawer-note {
           opacity: 0;
@@ -126,8 +116,6 @@ function Navbar() {
       `}</style>
 
       <div className="nav-top">
-        <a href="#" className="nav-logo">BigJ dev<span>.</span></a>
-
         <button className="menu-btn" aria-label="Open menu" onClick={() => setOpen(true)}>☰</button>
       </div>
 
