@@ -9,7 +9,7 @@ function Hero() {
   const rise = (delay) => ({ animation: `fadeUp 0.7s ease ${delay}s both` });
 
   return (
-    <section style={{ padding: "48px 24px 56px 24px", fontFamily: "'Montserrat', Arial, sans-serif" }}>
+    <section style={{ padding: "0 24px 56px 24px", fontFamily: "'Montserrat', Arial, sans-serif" }}>
       <style>{`
         .hero-inner {
           max-width: 1100px;
@@ -20,22 +20,7 @@ function Hero() {
           grid-template-columns: 1fr 340px;
           gap: 40px;
           align-items: center;
-          margin-top: 32px;
-        }
-        .pill-row {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-top: 20px;
-        }
-        .pill {
-          border: 1px solid var(--line);
-          border-radius: 999px;
-          padding: 7px 14px;
-          font-size: 13px;
-          font-weight: 600;
-          background: #fff;
-          color: var(--ink);
+          margin-top: 28px;
         }
         .hero-btn {
           padding: 13px 22px;
@@ -75,17 +60,11 @@ function Hero() {
         <img
           src="/Bigjdevlogo.png"
           alt="BigJ dev logo"
-          style={{ width: "100%", maxWidth: "460px", height: "auto", display: "block", ...rise(0) }}
+          style={{ width: "100%", maxWidth: "620px", height: "auto", display: "block", ...rise(0) }}
         />
 
-        <div className="pill-row" style={rise(0.15)}>
-          <span className="pill">Product engineer</span>
-          <span className="pill">Front-end heavy</span>
-          <span className="pill">Lagos to the world</span>
-        </div>
-
         <div className="hero-grid">
-          <div style={rise(0.3)}>
+          <div style={rise(0.15)}>
             <h1 style={{ fontSize: "clamp(30px, 5vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", margin: 0 }}>
               I build full features from start to finish<span style={{ color: "var(--yellow)" }}>.</span>
             </h1>
@@ -104,7 +83,7 @@ function Hero() {
               border: "1px solid var(--line)",
               borderRadius: "24px",
               padding: "24px",
-              ...rise(0.45),
+              ...rise(0.3),
             }}
           >
             {facts.map((f, i) => (
