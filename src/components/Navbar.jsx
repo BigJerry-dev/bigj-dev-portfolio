@@ -62,14 +62,15 @@ function Navbar() {
           position: fixed;
           top: 0;
           right: 0;
-          width: 300px;
-          max-width: 85vw;
+          width: 240px;
+          max-width: 70vw;
           height: 100vh;
+          height: 100dvh;
           background: #fff;
-          padding: 24px;
+          padding: 20px;
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 4px;
           transform: translateX(100%);
           transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
           z-index: 70;
@@ -81,9 +82,9 @@ function Navbar() {
         .drawer a {
           color: var(--ink);
           text-decoration: none;
-          font-size: 20px;
+          font-size: 17px;
           font-weight: 700;
-          padding: 14px 16px;
+          padding: 12px 14px;
           border-radius: 12px;
           transition: background 0.25s ease;
         }
@@ -112,12 +113,12 @@ function Navbar() {
 
       <div className={open ? "drawer show" : "drawer"}>
         <button className="drawer-close" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button>
-        <p style={{ fontSize: "13px", color: "var(--muted)", margin: "12px 16px 4px 16px" }}>Menu</p>
+        <p style={{ fontSize: "13px", color: "var(--muted)", margin: "12px 14px 4px 14px" }}>Menu</p>
         <a href="#work" onClick={() => setOpen(false)}>Work</a>
         <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
         <a href="#about" onClick={() => setOpen(false)}>About</a>
         <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-        <p style={{ fontSize: "13px", color: "var(--muted)", marginTop: "auto", lineHeight: 1.6 }}>
+        <p style={{ fontSize: "12px", color: "var(--muted)", marginTop: "auto", lineHeight: 1.6 }}>
           Simon Jeremiah Anuoluwapo<br />Lagos, Nigeria. Remote worldwide.
         </p>
       </div>
