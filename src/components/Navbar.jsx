@@ -62,12 +62,12 @@ function Navbar() {
           position: fixed;
           top: 0;
           right: 0;
-          width: 240px;
-          max-width: 70vw;
+          width: 200px;
+          max-width: 55vw;
           height: 100vh;
           height: 100dvh;
           background: #fff;
-          padding: 20px;
+          padding: 20px 20px 90px 20px;
           display: flex;
           flex-direction: column;
           gap: 4px;
@@ -86,10 +86,28 @@ function Navbar() {
           font-weight: 700;
           padding: 12px 14px;
           border-radius: 12px;
-          transition: background 0.25s ease;
+          opacity: 0;
+          transform: translateX(24px);
+          transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease;
         }
+        .drawer.show a {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        .drawer.show a:nth-of-type(1) { transition-delay: 0.15s; }
+        .drawer.show a:nth-of-type(2) { transition-delay: 0.22s; }
+        .drawer.show a:nth-of-type(3) { transition-delay: 0.29s; }
+        .drawer.show a:nth-of-type(4) { transition-delay: 0.36s; }
         .drawer a:hover {
           background: var(--cream);
+        }
+        .drawer-note {
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
+        .drawer.show .drawer-note {
+          opacity: 1;
+          transition-delay: 0.5s;
         }
         .drawer-close {
           align-self: flex-end;
@@ -118,7 +136,7 @@ function Navbar() {
         <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
         <a href="#about" onClick={() => setOpen(false)}>About</a>
         <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-        <p style={{ fontSize: "12px", color: "var(--muted)", marginTop: "auto", lineHeight: 1.6 }}>
+        <p className="drawer-note" style={{ fontSize: "12px", color: "var(--muted)", marginTop: "auto", lineHeight: 1.6 }}>
           Simon Jeremiah Anuoluwapo<br />Lagos, Nigeria. Remote worldwide.
         </p>
       </div>
