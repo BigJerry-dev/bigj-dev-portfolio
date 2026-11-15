@@ -45,27 +45,62 @@ function Navbar() {
           align-items: center;
           justify-content: center;
         }
-        .nav-menu {
-          display: none;
-          flex-direction: column;
-          padding: 8px 16px 16px 16px;
-          gap: 4px;
-          background: #FAF6EC;
-          border-top: 1px solid #E5DDC8;
+        .backdrop {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+          z-index: 60;
         }
-        .nav-menu.show {
+        .backdrop.show {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .drawer {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 280px;
+          max-width: 80vw;
+          height: 100vh;
+          background: #fff;
+          padding: 20px;
           display: flex;
+          flex-direction: column;
+          gap: 8px;
+          transform: translateX(100%);
+          transition: transform 0.3s ease;
+          z-index: 70;
+          box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
         }
-        .nav-menu a {
+        .drawer.show {
+          transform: translateX(0);
+        }
+        .drawer a {
           color: #111;
           text-decoration: none;
-          font-size: 14px;
-          font-weight: 600;
+          font-size: 15px;
+          font-weight: 700;
           letter-spacing: 1px;
-          padding: 12px;
-          border-radius: 8px;
-          background: #fff;
+          padding: 14px;
+          border-radius: 10px;
+          background: #FAF6EC;
           border: 1px solid #E5DDC8;
+        }
+        .drawer-close {
+          align-self: flex-end;
+          background: #111;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
         }
       `}</style>
 
@@ -74,17 +109,20 @@ function Navbar() {
 
         <div className="nav-right">
           <span className="nav-status">STATUS: OPERATIONAL</span>
-          <button className="menu-btn" onClick={() => setOpen(!open)}>
-            {open ? "X" : "☰"}
-          </button>
+          <button className="menu-btn" onClick={() => setOpen(true)}>☰</button>
         </div>
       </div>
 
-      <div className={open ? "nav-menu show" : "nav-menu"}>
+      <div className={open ? "backdrop show" : "backdrop"} onClick={() => setOpen(false)}></div>
+
+      <div className={open ? "drawer show" : "drawer"}>
+        <button className="drawer-close" onClick={() => setOpen(false)}>X</button>
+        <p style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "1px", color: "#666", margin: "12px 0 4px 0" }}>MY WORK</p>
         <a href="#work" onClick={() => setOpen(false)}>WORK</a>
         <a href="#skills" onClick={() => setOpen(false)}>SKILLS</a>
         <a href="#about" onClick={() => setOpen(false)}>ABOUT</a>
         <a href="#contact" onClick={() => setOpen(false)}>CONTACT</a>
+        <p style={{ fontSize: "12px", color: "#666", marginTop: "auto" }}>Simon Jeremiah Anuoluwapo - Lagos, Nigeria. Remote Worldwide.</p>
       </div>
     </nav>
   );
