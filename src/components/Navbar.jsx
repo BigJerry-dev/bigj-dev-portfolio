@@ -60,24 +60,28 @@ function Navbar() {
         }
         .drawer {
           position: fixed;
-          top: 0;
-          right: 0;
-          width: 200px;
-          max-width: 55vw;
-          height: 100vh;
-          height: 100dvh;
-          background: #fff;
-          padding: 20px 20px 90px 20px;
+          top: calc(12px + env(safe-area-inset-top));
+          right: 12px;
+          width: 220px;
+          max-width: 62vw;
           display: flex;
           flex-direction: column;
-          gap: 4px;
-          transform: translateX(100%);
+          gap: 10px;
+          transform: translateX(calc(100% + 24px));
           transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
           z-index: 70;
-          box-shadow: -8px 0 24px rgba(0, 0, 0, 0.1);
         }
         .drawer.show {
           transform: translateX(0);
+        }
+        .drawer-card {
+          background: #fff;
+          border-radius: 24px;
+          padding: 16px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
         }
         .drawer a {
           color: var(--ink);
@@ -85,7 +89,7 @@ function Navbar() {
           font-size: 17px;
           font-weight: 700;
           padding: 12px 14px;
-          border-radius: 12px;
+          border-radius: 14px;
           opacity: 0;
           transform: translateX(24px);
           transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease;
@@ -107,7 +111,7 @@ function Navbar() {
         }
         .drawer.show .drawer-note {
           opacity: 1;
-          transition-delay: 0.5s;
+          transition-delay: 0.45s;
         }
         .drawer-close {
           align-self: flex-end;
@@ -130,15 +134,21 @@ function Navbar() {
       <div className={open ? "backdrop show" : "backdrop"} onClick={() => setOpen(false)}></div>
 
       <div className={open ? "drawer show" : "drawer"}>
-        <button className="drawer-close" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button>
-        <p style={{ fontSize: "13px", color: "var(--muted)", margin: "12px 14px 4px 14px" }}>Menu</p>
-        <a href="#work" onClick={() => setOpen(false)}>Work</a>
-        <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
-        <a href="#about" onClick={() => setOpen(false)}>About</a>
-        <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-        <p className="drawer-note" style={{ fontSize: "12px", color: "var(--muted)", marginTop: "auto", lineHeight: 1.6 }}>
-          Simon Jeremiah Anuoluwapo<br />Lagos, Nigeria. Remote worldwide.
-        </p>
+        <div className="drawer-card">
+          <button className="drawer-close" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button>
+          <p style={{ fontSize: "13px", color: "var(--muted)", margin: "4px 14px" }}>Menu</p>
+          <a href="#work" onClick={() => setOpen(false)}>Work</a>
+          <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
+          <a href="#about" onClick={() => setOpen(false)}>About</a>
+          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+        </div>
+
+        <div className="drawer-card drawer-note">
+          <p style={{ fontSize: "13px", fontWeight: "700", color: "var(--ink)", margin: 0 }}>Simon Jeremiah Anuoluwapo</p>
+          <p style={{ fontSize: "12px", color: "var(--muted)", margin: "4px 0 0 0", lineHeight: 1.6 }}>
+            Lagos, Nigeria. Remote worldwide.
+          </p>
+        </div>
       </div>
     </nav>
   );
