@@ -6,7 +6,7 @@ import { projects } from "./data/projects";
 
 function App() {
   return (
-    <div style={{ background: "#FAF6EC", color: "#111", fontFamily: "'Montserrat', Arial, sans-serif" }}>
+    <div style={{ background: "#fff", color: "#111", fontFamily: "'Montserrat', Arial, sans-serif" }}>
       <Navbar />
       <Hero />
       <section id="work" style={{ padding: "40px" }}>
@@ -21,7 +21,7 @@ function App() {
         </div>
       </section>
       <Capabilities />
-      <section id="about" style={{ padding: "40px", borderBottom: "1px solid #E5DDC8" }}>
+      <section id="about" style={{ padding: "40px", borderBottom: "1px solid var(--line)" }}>
         <p style={{ fontSize: "11px", letterSpacing: "1px", fontWeight: "600" }}>DESIGN AND ENGINEERING ETHOS</p>
         <h2 style={{ fontSize: "32px", fontWeight: "800", lineHeight: "1.3", maxWidth: "700px" }}>
           I build interfaces that feel fast, solid, and clear. Building Products People Actually Use.
