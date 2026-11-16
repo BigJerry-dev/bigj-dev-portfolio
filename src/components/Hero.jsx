@@ -92,8 +92,6 @@ function Hero() {
           .hero-logo {
             width: calc(100% - 52px);
             margin-top: -60px;
-            position: relative;
-            z-index: 55;
           }
           .facts {
             background: transparent;
