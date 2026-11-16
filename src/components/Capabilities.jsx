@@ -1,28 +1,24 @@
 function Capabilities() {
   const groups = [
     {
-      title: "Front-End",
-      items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML", "CSS", "Vite"],
+      title: "Frontend",
+      items: ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Responsive Design", "Bootstrap", "Component-based Architecture"],
     },
     {
       title: "Mobile",
-      items: ["React Native", "Flutter", "Expo", "Android and iOS build"],
+      items: ["React Native", "Flutter", "Dart", "Expo", "Google Play Console", "App Publishing", "Performance Optimization"],
     },
     {
-      title: "Product",
-      items: ["UI/UX demo to build to product logic", "Feature ownership start to finish", "Responsive design"],
-    },
-    {
-      title: "State and Data",
-      items: ["Zustand", "Redux", "React Query", "REST API", "Firebase"],
+      title: "API & Backend",
+      items: ["REST API Integration", "Node.js", "Express.js", "Authentication", "JSON", "State Management"],
     },
     {
       title: "Tools",
-      items: ["Git", "GitHub", "VS Code", "Cloudflare Pages", "Netlify", "Figma to code"],
+      items: ["Git", "GitHub", "VS Code", "Postman", "npm", "Browser DevTools", "Agile", "Code Reviews", "Debugging", "SEO Basics", "Figma to code"],
     },
     {
       title: "Experience",
-      items: ["4 years, 2022 to 2026", "4 apps live on Play Store", "Lagos, Nigeria", "Remote worldwide"],
+      items: ["3+ years", "4 apps live on Google Play", "Lagos, Nigeria", "Remote teams"],
     },
   ];
 
