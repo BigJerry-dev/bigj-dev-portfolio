@@ -54,6 +54,36 @@ function Hero() {
           background: var(--ink);
           color: #fff;
         }
+
+        .facts {
+          background: #fff;
+          border: 1px solid var(--line);
+          border-radius: 24px;
+          padding: 24px;
+        }
+        .fact-row {
+          padding: 14px 0;
+        }
+        .fact-row + .fact-row {
+          border-top: 1px solid var(--line);
+        }
+        .fact-row:first-child {
+          padding-top: 0;
+        }
+        .fact-row:last-child {
+          padding-bottom: 0;
+        }
+        .fact-label {
+          font-size: 12px;
+          color: var(--muted);
+          font-weight: 600;
+        }
+        .fact-value {
+          font-size: 15px;
+          font-weight: 700;
+          margin-top: 4px;
+        }
+
         @media (max-width: 768px) {
           .hero-grid {
             grid-template-columns: 1fr;
@@ -64,6 +94,29 @@ function Hero() {
             margin-top: -60px;
             position: relative;
             z-index: 55;
+          }
+          .facts {
+            background: transparent;
+            border: none;
+            border-top: 1px solid var(--line);
+            border-radius: 0;
+            padding: 0;
+          }
+          .fact-row,
+          .fact-row:first-child,
+          .fact-row:last-child {
+            display: flex;
+            gap: 16px;
+            align-items: baseline;
+            padding: 13px 0;
+          }
+          .fact-label {
+            width: 92px;
+            flex-shrink: 0;
+          }
+          .fact-value {
+            margin-top: 0;
+            font-size: 14px;
           }
         }
       `}</style>
@@ -90,26 +143,11 @@ function Hero() {
             </div>
           </div>
 
-          <div
-            style={{
-              background: "#fff",
-              border: "1px solid var(--line)",
-              borderRadius: "24px",
-              padding: "24px",
-              ...rise(0.3),
-            }}
-          >
-            {facts.map((f, i) => (
-              <div
-                key={f.label}
-                style={{
-                  paddingTop: i === 0 ? 0 : "14px",
-                  marginTop: i === 0 ? 0 : "14px",
-                  borderTop: i === 0 ? "none" : "1px solid var(--line)",
-                }}
-              >
-                <div style={{ fontSize: "12px", color: "var(--muted)", fontWeight: 600 }}>{f.label}</div>
-                <div style={{ fontSize: "15px", fontWeight: 700, marginTop: "4px" }}>{f.value}</div>
+          <div className="facts" style={rise(0.3)}>
+            {facts.map((f) => (
+              <div key={f.label} className="fact-row">
+                <div className="fact-label">{f.label}</div>
+                <div className="fact-value">{f.value}</div>
               </div>
             ))}
           </div>
