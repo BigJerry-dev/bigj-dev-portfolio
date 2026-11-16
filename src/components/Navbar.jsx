@@ -1,11 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav style={{ background: "var(--cream)", fontFamily: "'Montserrat', Arial, sans-serif", position: "sticky", top: 0, zIndex: 50 }}>
+    <>
       <style>{`
+        .nav {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          background: transparent;
+          border-bottom: 1px solid transparent;
+          transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+        }
+        .nav.scrolled {
+          background: rgba(255, 255, 255, 0.72);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border-bottom-color: rgba(0, 0, 0, 0.06);
+        }
         .nav-top {
           display: flex;
           flex-direction: row;
@@ -60,6 +82,7 @@ function Navbar() {
           transform: translateX(calc(100% + 24px));
           transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
           z-index: 70;
+          font-family: 'Montserrat', Arial, sans-serif;
         }
         .drawer.show {
           transform: translateX(0);
@@ -115,9 +138,11 @@ function Navbar() {
         }
       `}</style>
 
-      <div className="nav-top">
-        <button className="menu-btn" aria-label="Open menu" onClick={() => setOpen(true)}>☰</button>
-      </div>
+      <nav className={scrolled ? "nav scrolled" : "nav"}>
+        <div className="nav-top">
+          <button className="menu-btn" aria-label="Open menu" onClick={() => setOpen(true)}>☰</button>
+        </div>
+      </nav>
 
       <div className={open ? "backdrop show" : "backdrop"} onClick={() => setOpen(false)}></div>
 
@@ -138,7 +163,7 @@ function Navbar() {
           </p>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
 
