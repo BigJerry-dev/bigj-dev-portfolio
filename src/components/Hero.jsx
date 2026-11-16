@@ -15,6 +15,12 @@ function Hero() {
           max-width: 1100px;
           margin: 0 auto;
         }
+        .hero-logo {
+          width: 100%;
+          max-width: 620px;
+          height: auto;
+          display: block;
+        }
         .hero-grid {
           display: grid;
           grid-template-columns: 1fr 340px;
@@ -53,6 +59,12 @@ function Hero() {
             grid-template-columns: 1fr;
             gap: 28px;
           }
+          .hero-logo {
+            width: calc(100% - 52px);
+            margin-top: -60px;
+            position: relative;
+            z-index: 55;
+          }
         }
       `}</style>
 
@@ -60,7 +72,8 @@ function Hero() {
         <img
           src="/Bigjdevlogo.png"
           alt="BigJ dev logo"
-          style={{ width: "100%", maxWidth: "620px", height: "auto", display: "block", ...rise(0) }}
+          className="hero-logo"
+          style={rise(0)}
         />
 
         <div className="hero-grid">
