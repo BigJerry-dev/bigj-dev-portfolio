@@ -1,7 +1,7 @@
 function Hero() {
   const facts = [
     { label: "Name", value: "Simon Jeremiah Anuoluwapo" },
-    { label: "Role", value: "Product Engineer, Front-End Heavy" },
+    { label: "Role", value: "Front-End Developer" },
     { label: "Location", value: "Lagos, Nigeria. Remote worldwide" },
     { label: "Availability", value: "Open for contracts" },
   ];
@@ -133,7 +133,7 @@ function Hero() {
               I build full features from start to finish<span style={{ color: "var(--yellow)" }}>.</span>
             </h1>
             <p style={{ fontSize: "17px", lineHeight: 1.7, color: "#444", margin: "20px 0 0 0", maxWidth: "540px" }}>
-              UI/UX demo, React and Next.js front end, product logic. Not just pixels. Building products people actually use.
+              UI/UX demo, React and TypeScript front end, product logic. Not just pixels. Building products people actually use.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "28px" }}>
               <a href="#work" className="hero-btn hero-btn-dark">View my work</a>
