@@ -1,6 +1,7 @@
 function Contact() {
   const links = [
     { label: "Email me", href: "mailto:simonjeremiah360@gmail.com", primary: true },
+    { label: "Download CV", href: "/Simon-Jeremiah-CV.pdf", download: "Simon-Jeremiah-CV.pdf" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/simonjeremiah" },
     { label: "GitHub", href: "https://github.com/BigJerry-dev" },
   ];
@@ -55,11 +56,12 @@ function Contact() {
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "28px" }}>
           {links.map((l) => {
-            const external = !l.href.startsWith("mailto:");
+            const external = l.href.startsWith("http");
             return (
               <a
                 key={l.label}
                 href={l.href}
+                download={l.download}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noreferrer" : undefined}
                 className={l.primary ? "contact-btn contact-btn-dark" : "contact-btn contact-btn-light"}
