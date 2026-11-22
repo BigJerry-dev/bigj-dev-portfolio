@@ -2,7 +2,9 @@ export const projects = [
   {
     id: 1,
     title: "Fintech Dashboard",
-    description: "See the dashboard, charts, transactions, and filters. Built to show how I work with money products.",
+    description: "A payment gateway dashboard for staff and CEOs. Track volume, settlements and success rate, then filter transactions by status, merchant and channel. Built to show how I work with money products.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/fintech-preview.webp",
     live: "https://bigjdev-fintech-dashboard.pages.dev",
     github: "https://github.com/BigJerry-dev/bigjDev-fintech-dashboard",
   },
