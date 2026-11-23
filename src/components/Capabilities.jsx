@@ -2,7 +2,7 @@ function Capabilities() {
   const groups = [
     {
       title: "Frontend",
-      items: ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Responsive Design", "Bootstrap", "Component-based Architecture"],
+      items: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design", "Bootstrap", "Component-based Architecture"],
     },
     {
       title: "Mobile",
